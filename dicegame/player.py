@@ -17,19 +17,23 @@ class Player:
 
     @property
     def wager(self):
+        """How much the player has wagered"""
         return self._wager
 
     @wager.setter
     def wager(self, val):
+        """Set how much the player is wagering."""
         self._bankroll = self._bankroll - val
         self._wager = val
 
     @property
     def current_roll(self):
+        """The current value of the dice roll."""
         return self._current_roll
 
     @current_roll.setter
     def current_roll(self, val):
+        """Change the object's memory of what occured."""
         self._current_roll = val
 
     @property
@@ -44,13 +48,15 @@ class Player:
 
     @property
     def bankroll(self):
+        """The current bankroll formattted."""
         return currency(self._bankroll, grouping=True)
 
     @bankroll.setter
     def bankroll(self, val):
+        """A setter to change the bankroll"""
         self._bankroll += val
 
-    def is_AI(self):
+    def is_ai(self):
         """A helper to identify if the player is a robot or not."""
         return False
 
@@ -66,9 +72,12 @@ class Player:
 
 
 class RobotPlayer(Player):
+    """A robot player to play the dice game."""
+
     def __init__(self, nid, name, bankroll=100):
+        """The initializer."""
         super().__init__(nid, name, bankroll)
 
-    def is_AI(self):
+    def is_ai(self):
         """A helper to identify if the player is a robot or not."""
         return True

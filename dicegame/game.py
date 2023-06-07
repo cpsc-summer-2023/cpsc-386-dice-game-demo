@@ -23,7 +23,7 @@ class DiceGame:
         """The game loop"""
         while not self._is_game_over:
             for player in self._all_particpants:
-                if player.is_AI():
+                if player.is_ai():
                     print(f'The robot {player} will wager $10')
                     player.wager = 10
                 else:

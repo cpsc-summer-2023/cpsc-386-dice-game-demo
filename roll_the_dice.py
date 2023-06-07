@@ -1,7 +1,7 @@
 """ A made up dice game to show how to organize a project. """
 
 import sys
-from dicegame import *
+from dicegame import game
 
 
 def main():
